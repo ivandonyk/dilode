@@ -33,7 +33,14 @@
   }
 }
 
-body {}
+body {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+}
+p{
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+}
 
 @layer utilities {
   .text-balance {

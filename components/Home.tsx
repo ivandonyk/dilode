@@ -98,7 +98,7 @@ function Home() {
             <tbody>
                 {tokenData.map((row, index) => (
                     <tr key={row.symbol} className={`transition duration-500 ease-in-out transform border ${flashRows.has(row.symbol) ? "flash" : ""}`}>
-                        <td className='pl-3 py-6'>{index + 1}</td>
+                        <td className='pl-3 py-6 text-gray-500'>{index + 1}</td>
                         <td className="px-4 py-6 border-none flex gap-2 items-center">
                             {row.logo && <Image src={row.logo} width={30} height={30} alt={row.symbol} />}
                             <p>{row.name}</p>
@@ -108,24 +108,24 @@ function Home() {
                         <td className={`px-4 py-6 border-none font-bold ${row.price_change_1m < 0 ? "text-red-800" : "text-green-600"}`}>
                             <div className='flex items-center'>
                                 <DropDownIcon iconDirection={row.price_change_1m < 0 ? "downward" : "upward"} />
-                                {row.price_change_1m.toFixed(2)}
+                                <p>{row.price_change_1m.toFixed(2)}</p>
                             </div>
 
                         </td>
                         <td className={`px-4 py-6 border-none font-bold ${row.price_change_1h < 0 ? "text-red-800" : "text-green-600"}`}>
                             <div className='flex items-center'>
                                 <DropDownIcon iconDirection={row.price_change_1h < 0 ? "downward" : "upward"} />
-                                {row.price_change_1h.toFixed(2)}
+                                <p>{row.price_change_1h.toFixed(2)}</p>
                             </div>
                         </td>
                         <td className={`px-4 py-6 border-none font-bold ${row.price_change_24h < 0 ? "text-red-800" : "text-green-600"}`}>
                             <div className='flex items-center'>
                                 <DropDownIcon iconDirection={row.price_change_24h < 0 ? "downward" : "upward"} />
-                                {row.price_change_24h.toFixed(2)}
+                                <p>{row.price_change_24h.toFixed(2)}</p>
                             </div>
                         </td>
-                        <td className={`px-4 py-6 border-none text-right`}>$ {formatNumber(row.market_cap)}</td>
-                        <td className={`px-4 py-6 border-none text-right`}>{formatNumber(row.volume)} <span className='text-gray-500 text-sm font-bold'>{row.symbol}</span></td>
+                        <td className={`px-4 py-6 border-none text-right`}><p>${formatNumber(row.market_cap)}</p></td>
+                        <td className={`px-4 py-6 border-none text-right`}><p>{formatNumber(row.volume)} <span className='text-gray-500 text-sm font-bold'>{row.symbol}</span></p></td>
                     </tr>
                 ))}
             </tbody>
