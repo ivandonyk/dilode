@@ -96,9 +96,10 @@ function Home() {
     }, [flashRows])
     return (
         <div className='w-full'>
-            <div className='mb-16'>
-                <h1 className='text-xl  font-bold'>Diode Crypto Price Tracker</h1>
-                <p>Timer: {timer}</p>
+            <div className='mb-16 w-full flex  flex-col items-center justify-center'>
+                    <h1 className='text-xl  font-bold'>Diode Crypto Price Tracker</h1>
+                    <p>Timer: {timer}</p>
+
             </div>
 
             <table className="min-w-full border border-gray-300 border-collapse">
