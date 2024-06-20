@@ -1,6 +1,6 @@
-export const formatNumber = (number:number)=>{
+export const formatNumber = (number:number,{decimalPoint}:{decimalPoint?:number})=>{
     // Ensure number is rounded to 2 decimal places
-    const roundedNumber = Number(number).toFixed(2);
+    const roundedNumber = decimalPoint===0?Math.ceil(number):Number(number).toFixed(decimalPoint?decimalPoint:2);
 
     // Convert number to string and add commas for thousands separator
     const parts = roundedNumber.toString().split('.');
